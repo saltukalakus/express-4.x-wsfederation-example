@@ -1,5 +1,6 @@
 var express = require('express');
 var passport = require('passport');
+
 var Strategy = require('passport-wsfed-saml2').Strategy;
 
 
@@ -47,7 +48,8 @@ app.use(passport.session());
 // Define routes.
 app.get('/',
   function(req, res) {
-    res.render('home', { user: req.user });
+    // res.render('home', { user: req.user });
+    res.redirect('/login/idp');
   });
 
 app.get('/login',
